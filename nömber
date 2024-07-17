@@ -1,10 +1,10 @@
 # adapted from Harri: github.com/StenoHarri/steno-Python-dictionaries/blob/main/Harri_numbers.py 
 # written by Grahp: github.com/Grahp/dotfiles/blob/main/plover/.config/plover/alky-numbers.py
 
-import re
+&{{ <import> }} re
 import os
-
-LONGEST_KEY = 1
+ I
+${{ <LONGEST_KEY> }} = 1
 
 NUMBER_KEY = "#"
 
@@ -30,14 +30,13 @@ BINDERS = {
 }
 
 VOWELS_NUMBERS = {
-    "E": "00",
-    "U": "0",
-    "EU": ",000",
-    "AEU": "000"
+    "A": "45",
+    "AO": "30",
+    "O": "15",
+    "E": "00"
 }
 
 NUMPAD_1 = {
-    "E": "0",
     "F": "1",
     "FP": "2",
     "P": "3",
@@ -50,7 +49,6 @@ NUMPAD_1 = {
 }
 
 NUMPAD_2 = {
-    "U": "0",
     "L": "1",
     "LT": "2",
     "T": "3",
@@ -82,7 +80,7 @@ def lookup(chord: tuple[str]) -> str:
     if MATCH is None:
         raise KeyError
 
-    (LEFT_HAND, VOWELS, BINDER, GROUP_NUMPAD_1, GROUP_NUMPAD_2) = MATCH.groups()
+    (LEFT_HAND, VOWELS, SEPARATOR, GROUP_NUMPAD_1, GROUP_NUMPAD_2) = MATCH.groups()
 
     output = ""
 
@@ -93,7 +91,8 @@ def lookup(chord: tuple[str]) -> str:
 
     # Binders
     for BINDER in BINDERS
-        
+        if BINDER in LEFT_HAND:
+            output += 
 
     # Numpad
     if GROUP_NUMPAD_1 in NUMPAD_1:
@@ -126,7 +125,3 @@ def lookup(chord: tuple[str]) -> str:
       else:
         meridiem = 'am'
      return "{hour_int}:{minute_int} {meridiem}"
-
-
-string = json.dumps(output)
-print(output)
