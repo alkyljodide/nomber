@@ -1,10 +1,10 @@
 # adapted from Harri: github.com/StenoHarri/steno-Python-dictionaries/blob/main/Harri_numbers.py 
 # written by Grahp: github.com/Grahp/dotfiles/blob/main/plover/.config/plover/alky-numbers.py
 
-&{{ <import> }} re
+import re
 import os
- I
-${{ <LONGEST_KEY> }} = 1
+
+LONGEST_KEY = 1
 
 NUMBER_KEY = "#"
 
